@@ -33,7 +33,7 @@ public class Select {
              "references \"Users\"(id));"
 );
 
-        System.out.println("Table was created");
+        System.out.println("Table created");
 
         return conn;
     }
