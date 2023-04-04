@@ -17,6 +17,14 @@ public class Main {
 
             var todoCollection = database.getCollection("todo");
             todoCollection.find().forEach((Consumer<Document>) System.out::println);
+
+            todoCollection.insertOne(new Document(Map.of(
+                    "_id", new ObjectId(),
+                    "task", "Drink some coffee",
+                    "dateCreated", LocalDateTime.now(),
+                    "done", false)));
+
+
             todoCollection.updateOne(new Document("_id", new ObjectId("64111560dcc1d43dacbc5742")),
                     new Document(Map.of("$set", new Document("done", true),
                             "$currentDate", new Document("dateDone", true),
@@ -24,12 +32,7 @@ public class Main {
             todoCollection.deleteOne(new Document("_id", new ObjectId("641116ccdcc3f82a2056a961")));
             todoCollection.find().forEach((Consumer<Document>) System.out::println);
 
-           /* var todoDocument = new Document(Map.of(
-                    "_id", new ObjectId(),
-                    "task", "Drink some coffee",
-                    "dateCreated", LocalDateTime.now(),
-                    "done", false));
-            todoCollection.insertOne(todoDocument);*/
+
 
         };
     }

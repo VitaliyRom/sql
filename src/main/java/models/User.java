@@ -1,24 +1,46 @@
 package models;
 
-import java.util.List;
+import jakarta.persistence.*;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "\"Users\"")
 public class User {
-    public int id;
-    public String name;
-    public List<Contact> contacts;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
 
-    public User(int id, String name, List<Contact> contacts) {
+    @Column(name = "name", nullable = false, length = 20)
+    private String name;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Contact> contacts = new LinkedHashSet<>();
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contact> contacts) {
         this.contacts = contacts;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", contacts=" + contacts +
-                '}';
-    }
 }
