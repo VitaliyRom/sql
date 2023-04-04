@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainSql {
+public class Main {
     public static void main(String[] args) {
         User user1 = new User();
         user1.setId(1);
