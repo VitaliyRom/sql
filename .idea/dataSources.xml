@@ -12,5 +12,16 @@ C:/Users/user/Idea Projects/sql/src/main/resources/META-INF/persistence.xml</rem
       <jdbc-url>jdbc:postgresql://localhost:5432/postdb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="some/Hibernate" uuid="de2f778e-7887-4551-a554-136e39b05042">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/user/Idea Projects/sql/src/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postdb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
